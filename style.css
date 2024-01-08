@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(./assets/bg-mobile-light.jpg) no-repeat top center/ cover;
+}
