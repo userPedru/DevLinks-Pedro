@@ -1,15 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevLinks Pedro</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>DevLinks Pedro</title>
+  </head>
+  <body class="light">
+    <div class="Container">
+      <div class="Profile">
+        <div class="Avatar">
+          <img
+            src="./assets/avatar.png"
+            alt="Foto de perfil do instrutor do curso."
+          />
+        </div>
+        <div class="Instagram">
+          <a
+            href="https://www.instagram.com/euxoto?igsh=Mnl0eWJmZXFpcWRv"
+            target="_blank"
+            ><p>@euxoto</p></a
+          >
+        </div>
+      </div>
 
+      <div class="Switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
 
-  
-  <script src="./script.js"></script>
-</body>
+      <div class="List">
+        <ul>
+          <li>
+            <a
+              href="https://open.spotify.com/playlist/1JGwBNsoLiOUxqranDFv4W?si=ad30da1c2c4a469f"
+              target="_blank"
+              >Playlist Master</a
+            >
+          </li>
+
+          <li>
+            <a href="#">Conhecimentos</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/userPedru" target="_blank"
+              >Veja meu portifólio</a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.rocketseat.com.br/" target="_blank"
+              >Conheça a RockeatSeat</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="SocialLinks">
+        <a href="https://github.com/userPedru" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a
+          href="https://www.instagram.com/euxoto?igsh=Mnl0eWJmZXFpcWRv"
+          target="_blank"
+        >
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a
+          href="https://steamcommunity.com/profiles/76561199542706869/"
+          target="_blank"
+        >
+          <ion-icon name="logo-steam"></ion-icon>
+        </a>
+        <a href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+
+      <footer>Feito com ♥ por mim</footer>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
 </html>

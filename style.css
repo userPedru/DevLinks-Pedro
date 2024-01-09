@@ -1,8 +1,190 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/*Dark mode*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stoke-color: rgb(255, 255, 255, 0.5);
+  --surface-color: rgb(255, 255, 255, 0.1);
+  --surface-color-hover: rgb(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.1);
+  --button-url-bg: url(./assets/moon-stars.svg);
+}
+
+/*Light mode*/
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stoke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --button-url-bg: url(./assets/sun.svg);
 }
 
 body {
-  background: url(./assets/bg-mobile-light.jpg) no-repeat top center/ cover;
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-size: cover; /*cobrir todo display disponivel dependendo da tela do dospositivo*/
+  background-position: top center; /*background-position: y x;*/
+  height: 100vh;
+  /*
+  Agrupamento da propriedade background - chamado de shorthand ou atalho
+  background: color imagem posisition/size;
+  background: url(./assets/bg-mobile.jpg) no-repeat top center/ cover;
+  */
+}
+
+.Container {
+  width: 100%; /*Propriedade está indicando que independentemente do tamanho da tela o container irá ocupar 100% da tela*/
+  max-width: 588px; /*Propriedade que está fazendo com que até a tela alcançar 588px os elementos do container irao parar de almentar o tamanho*/
+  /*Propriedade que está fazendo o alinhamento para centralizar a DIV container*/
+  margin: 56px auto 0px; /*margin: top right bottom left*/
+  padding: 0 24px;
+}
+/*Estilization do seletor profile*/
+.Profile {
+  text-align: center;
+  padding: 24px;
+}
+
+.Profile .Avatar img {
+  width: 112px;
+}
+
+.Profile .Instagram a {
+  font-family: bebas;
+  text-decoration: none;
+  color: var(--text-color);
+  line-height: 25px;
+  margin-top: 8px;
+}
+
+.Switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+.Switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--button-url-bg) center no-repeat;
+  border-radius: 50%;
+  border: 0;
+
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  left: 0;
+  transform: translateY(-50%);
+  animation: slide-back 0.4s;
+}
+
+.light .Switch button {
+  animation: slide-in 0.4s forwards;
+}
+
+.Switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+.Switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stoke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.List ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+/*Estilization dos itens da lista*/
+.List ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stoke-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+
+.List ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1px solid var(--text-color);
+}
+
+.SocialLinks {
+  display: flex;
+  padding: 24px 0;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.SocialLinks a {
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.SocialLinks a:hover {
+  background-color: var(--highlight-color);
+}
+
+footer {
+  font-size: 14px;
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-color);
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*Animations botton*/
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
